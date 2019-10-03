@@ -3,14 +3,28 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="act" class="com.stackroute.domain.Actor">
-        <property name="age" value="23"></property>
-        <property name="gender" value="Male"></property>
-        <property name="name" value="ajay"></property>
-    </bean>
-    <bean id="movie" class="com.stackroute.domain.Movie">
-        <property  name="actor" ref="act">
 
-        </property>
+    <bean id="act" class="com.stackroute.domain.Actor" >
+        <constructor-arg name="name" value="ajay" type="java.lang.String"/>
+        <constructor-arg name="gender" value="male"  type="java.lang.String"/>
+        <constructor-arg name="age" value="23" type="int"/>
+    </bean>
+    <bean id="act2" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="atul"/>
+        <constructor-arg name="gender" value="male"/>
+        <constructor-arg name="age" value="23"/>
+
+    </bean>
+    <bean id="act3" class="com.stackroute.domain.Actor">
+        <constructor-arg name="name" value="arpit"/>
+        <constructor-arg name="gender" value="male"/>
+        <constructor-arg name="age" value="22"/>
+
+    </bean>
+    <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">
+<!--        <property  name="actor" ref="act">-->
+
+<!--        </property>-->
+        <constructor-arg name="actor" ref="act"/>
     </bean>
     </beans>

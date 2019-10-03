@@ -17,10 +17,16 @@ public class App
         ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
         System.out.println( "beans is loadedz" );
         Actor actor=context.getBean("act",Actor.class);
-
-        System.out.println(actor.getName());
+//
+        System.out.println(actor.getAge());
         Movie movie=context.getBean("movie",Movie.class);
         movie.name();
-//        System.out.println();
+
+        Movie movie2=context.getBean("movie",Movie.class);
+        movie2.name();
+
+
+
+        System.out.println(movie2==movie);
     }
 }
