@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="act" class="com.stackroute.domain.Actor" >
+    <bean id="actor" class="com.stackroute.domain.Actor" >
         <constructor-arg name="name" value="ajay" type="java.lang.String"/>
         <constructor-arg name="gender" value="male"  type="java.lang.String"/>
         <constructor-arg name="age" value="23" type="int"/>
@@ -21,10 +21,13 @@
         <constructor-arg name="age" value="22"/>
 
     </bean>
-    <bean id="movie" class="com.stackroute.domain.Movie" scope="prototype">
+    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName">
 <!--        <property  name="actor" ref="act">-->
 
 <!--        </property>-->
-        <constructor-arg name="actor" ref="act"/>
+<!--        <constructor-arg name="actor" ref="act"/>-->
     </bean>
+<!--    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byType">-->
+<!--        <constructor-arg name="actor" ref="actor"/>-->
+<!--    </bean>-->
     </beans>
