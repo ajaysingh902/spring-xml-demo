@@ -21,8 +21,7 @@ public class App
 //        System.out.println(actor.getAge());
         Movie movie=context.getBean("movie",Movie.class);
         movie.name();
-        Movie movie2=context.getBean("movie2",Movie.class);
-        movie.name();
+
 
 
 //        Movie movie2=context.getBean("movie",Movie.class);
