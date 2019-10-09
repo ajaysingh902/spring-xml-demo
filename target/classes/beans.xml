@@ -30,4 +30,6 @@
 <!--    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byType">-->
 <!--        <constructor-arg name="actor" ref="actor"/>-->
 <!--    </bean>-->
+    <bean id="demo" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy" >
+    </bean>
     </beans>
